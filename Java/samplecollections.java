@@ -419,41 +419,44 @@ class Samplecollections {
   //  String result= Arrays.stream(arr).sorted((a,b)->b.length()-a.length()).skip(1).findFirst().get();
   //  System.out.println(result);
      
-    String str="fQgHkSvLW";
-    String lowerCase=str.chars().filter(Character::isLowerCase).sorted().mapToObj(c->Character.toString(c)).collect(Collectors.joining());
-    String upperCase=str.chars().filter(Character::isUpperCase).sorted().mapToObj(c->String.valueOf((char)c)).collect(Collectors.joining());
-    System.out.println(lowerCase);
-    System.out.println(upperCase);
-    System.out.println(str);
-    StringBuilder r=new StringBuilder();
-    int l=0,u=0;
-    for(int i=0;i<str.length();i++)
-    {
-      char c=str.charAt(i);
-      if(Character.isLowerCase(c))
-      {
-        char lower=lowerCase.charAt(l);
-        r.append(lower);
-        l++;
-      }
-      else
-      {
-        char upper=upperCase.charAt(u);
-        r.append(upper);
-        u++;
-      }
-    }
+    // String str="fQgHkSvLW";
+    // String lowerCase=str.chars().filter(Character::isLowerCase).sorted().mapToObj(c->Character.toString(c)).collect(Collectors.joining());
+    // String upperCase=str.chars().filter(Character::isUpperCase).sorted().mapToObj(c->String.valueOf((char)c)).collect(Collectors.joining());
+    // System.out.println(lowerCase);
+    // System.out.println(upperCase);
+    // System.out.println(str);
+    // StringBuilder r=new StringBuilder();
+    // int l=0,u=0;
+    // for(int i=0;i<str.length();i++)
+    // {
+    //   char c=str.charAt(i);
+    //   if(Character.isLowerCase(c))
+    //   {
+    //     char lower=lowerCase.charAt(l);
+    //     r.append(lower);
+    //     l++;
+    //   }
+    //   else
+    //   {
+    //     char upper=upperCase.charAt(u);
+    //     r.append(upper);
+    //     u++;
+    //   }
+    // }
 
-    System.out.println(r);
+    // System.out.println(r);
 
     List<Integer> ll=List.of(10,20,30,40);
     System.out.println(ll);
 
-    String sl="hello";
+    List<String> sl=List.of("Yellow","Green","Orange");
+    sl.stream().sorted().forEach(System.out::println);
+
+    String str="hello";
     Consumer<String> cl=(s)->{
       System.out.println(s);
     };
-    cl.accept(sl);
+    cl.accept(str);
 
     Supplier<String> pl=()->{
       return String.valueOf(10);
